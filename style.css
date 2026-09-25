@@ -50,3 +50,25 @@
     color: #99582A;
 
  }
+
+ #new-btn{
+    padding: 1rem;
+    font-size: 1.25rem;
+    background-color: #BB9457;
+    border-radius: 1rem;
+    color: #432818;
+    border: none;
+ }
+
+ #mes{
+   color:#BB9457;
+   font-size: 8vmin;
+}
+
+.mes-container{
+   height: 15vmin;
+}
+
+.hide{
+   display: none;
+}
