@@ -36,6 +36,12 @@ const disableBoxes= ()=>{
         box.disabled = true;
     }
 }
+const enabkeBoxes= ()=>{
+    for(let box of boxs){
+        box.disabled = false;
+        box.innerText = "";
+    }
+}
 
 const showWinner = (winner)=>{
     mes.innerText = `The winner is ${winner}`;
@@ -43,6 +49,11 @@ const showWinner = (winner)=>{
    disableBoxes();
     
 }
+const error = () => {
+    mes.innerText = "The Match is Draw! Please restart the New Game";
+    mesContainer.classList.remove("hide");
+    disableBoxes();
+};
 
 const checkWinner = ()=>{
     for( let pattern of winPatterns){
@@ -52,13 +63,35 @@ const checkWinner = ()=>{
 
         if (posval1 != "" && posval2 != "" && posval3 != ""){
             if(posval1 === posval2 && posval2 === posval3){
-                console.log ("winner");
                 showWinner(posval1);
             }
         }
     } 
-}
+    let allFilled = true;
+
+    for (let box of boxs) {
+        if (box.innerText === "") {
+            allFilled = false;
+            break;
+        }
+    }
+
+    if (allFilled) {
+        error();
+    }
+};
+
+
 
 const resetGame = ()=>{
-    
+    trunX =true;
+    enabkeBoxes();
+    mesContainer.classList.add("hide");
 }
+
+resetBtn.addEventListener("click",()=>{
+    resetGame();
+})
+newGameBtn.addEventListener("click",()=>{
+    resetGame();
+})

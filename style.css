@@ -34,6 +34,7 @@
     font-size: 8vmin;
     color: #432818;
     background-color: #FFE6A7;
+    cursor: pointer;
  }
 
  #reset-btn{
@@ -43,6 +44,7 @@
     border-radius: 1rem;
     color: #432818;
     border: none;
+    cursor: pointer;
     
  }
 
@@ -58,6 +60,7 @@
     border-radius: 1rem;
     color: #432818;
     border: none;
+    cursor: pointer;
  }
 
  #mes{
