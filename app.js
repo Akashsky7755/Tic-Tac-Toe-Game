@@ -3,6 +3,7 @@ let resetBtn = document.querySelector('#reset-btn');
 let newGameBtn = document.querySelector("#new-btn");
 let mesContainer = document.querySelector(".mes-container");
 let mes  = document.querySelector("#mes");
+let turn = document.querySelector("#turn");
 
 let trunX = true;
 
@@ -17,19 +18,24 @@ const winPatterns = [
     [6,7,8],
 ];
 
-boxs.forEach((box)=>{
-    box.addEventListener("click",()=>{
-        if (trunX){
+boxs.forEach((box) => {
+    box.addEventListener("click", () => {
+
+        if (trunX) {
             box.innerText = "X";
             trunX = false;
-        }else{
-            box.innerText = "0"
+            turn.innerText = "Turn: O";
+        } else {
+            box.innerText = "O";
             trunX = true;
+            turn.innerText = "Turn: X";
         }
-       box.disabled = true;
-       checkWinner();
-    })
-})
+
+        box.disabled = true;
+
+        checkWinner();
+    });
+});
 
 const disableBoxes= ()=>{
     for(let box of boxs){
@@ -85,6 +91,7 @@ const checkWinner = ()=>{
 
 const resetGame = ()=>{
     trunX =true;
+    turn.innerText = "Turn: X";
     enabkeBoxes();
     mesContainer.classList.add("hide");
 }
