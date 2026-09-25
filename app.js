@@ -23,6 +23,21 @@ boxs.forEach((box)=>{
             box.innerText = "0"
             trunX = true;
         }
-       
+       box.disabled = true;
+       checkWinner();
     })
 })
+
+const checkWinner = ()=>{
+    for( let pattern of winPatterns){
+        let posval1=boxs[pattern[0]].innerText;
+        let posval2= boxs[pattern[1]].innerText;
+        let posval3=boxs[pattern[2]].innerText;
+
+        if (posval1 != "" && posval2 != "" && posval3 != ""){
+            if(posval1 === posval2 && posval2 === posval3){
+                console.log ("winner");
+            }
+        }
+    } 
+}
