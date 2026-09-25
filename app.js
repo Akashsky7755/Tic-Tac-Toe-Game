@@ -31,9 +31,16 @@ boxs.forEach((box)=>{
     })
 })
 
+const disableBoxes= ()=>{
+    for(let box of boxs){
+        box.disabled = true;
+    }
+}
+
 const showWinner = (winner)=>{
     mes.innerText = `The winner is ${winner}`;
    mesContainer.classList.remove('hide');
+   disableBoxes();
     
 }
 
@@ -50,4 +57,8 @@ const checkWinner = ()=>{
             }
         }
     } 
+}
+
+const resetGame = ()=>{
+    
 }
